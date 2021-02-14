@@ -10,7 +10,7 @@ public class BackgroundInfo : MonoBehaviour
 
     void Update()
     {
-        int cookies = (int)Game.currentCookies;
+        double cookies = System.Math.Round(Game.currentCookies);
 
         if (cookies == 1)
             cookiesText = " cookie";
