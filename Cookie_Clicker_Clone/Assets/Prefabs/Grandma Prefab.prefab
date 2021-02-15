@@ -27,7 +27,7 @@ RectTransform:
   m_GameObject: {fileID: 8187156852964014606}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 8187156853067737773}
   m_RootOrder: 3
@@ -64,7 +64,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 383b3ddb9342ac84d807c1b0e317c571, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0e6b75831f009b745834898f13154ad9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 8187156853067737774}
   - component: {fileID: 8187156853067737772}
   m_Layer: 0
-  m_Name: Cursor Prefab
+  m_Name: Grandma Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,9 +124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffe4d99d5a2a3ed4f8e4e2e2cee66222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Cursor
-  cookiesPerSecond: 0.1
-  baseCost: 15
+  type: Grandma
+  cookiesPerSecond: 1
+  baseCost: 100
   amount: 0
 --- !u!114 &8187156853067737772
 MonoBehaviour:

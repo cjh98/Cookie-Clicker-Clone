@@ -9,11 +9,12 @@ public class BuildingUI : MonoBehaviour
     public Text amountDisplay;
     public Text costDisplay;
 
-
     void Start()
     {
         building = GetComponent<Building>();
         buildingName.text = building.type;
+        costDisplay.text = building.baseCost.ToString();
+        amountDisplay.text = building.amount.ToString();
     }
 
     public void OnClick()

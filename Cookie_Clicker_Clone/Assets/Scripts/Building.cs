@@ -11,11 +11,6 @@ public class Building : MonoBehaviour
 
     double priceMod = 1.15;
 
-    void Start()
-    {
-
-    }
-
     void FixedUpdate()
     {
         Game.BakeCookies(cookiesPerSecond * amount);

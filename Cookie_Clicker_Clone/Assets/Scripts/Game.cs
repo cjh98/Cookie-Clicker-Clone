@@ -6,7 +6,6 @@ public static class Game
     public static double totalCookies;
 
     public static double timeStep = 0.02;
-
     public static double totalCookiesPerSecond = 0;
 
     public static void BakeCookies(double amount)
