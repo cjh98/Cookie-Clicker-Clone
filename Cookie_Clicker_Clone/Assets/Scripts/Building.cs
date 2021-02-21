@@ -1,36 +1,35 @@
-﻿using UnityEngine;
-
-public class Building : MonoBehaviour
+﻿
+public class Building
 {
     public string type;
-
-    public double cookiesPerSecond;
     public double baseCost;
-
+    public double cookiesPerSecond;
+    
     public int amount = 0;
+    public int level = 1;
 
-    double priceMod = 1.15;
+    double newCostFactor = 1.15;
 
-    void FixedUpdate()
+    public Building(string type, double baseCost, double cookiesPerSecond)
     {
-        Game.BakeCookies(cookiesPerSecond * amount);
+        this.type = type;
+        this.baseCost = baseCost;
+        this.cookiesPerSecond = cookiesPerSecond;
     }
 
     public void Purchase()
     {
-        double price = CalcPrice();
-
-        if (Game.currentCookies >= price)
-        {
-            Game.UseCookies(price);
-            amount++;
-
-            Game.totalCookiesPerSecond += cookiesPerSecond;
-        }
+        Game.thisGame.currentCookies -= GetPrice();
+        amount++;
     }
 
-    public double CalcPrice()
+    public void Upgrade()
     {
-        return baseCost * System.Math.Pow(priceMod, amount);
+        level++;
+    }
+
+    public double GetPrice()
+    {
+        return baseCost * System.Math.Pow(newCostFactor, amount);
     }
 }

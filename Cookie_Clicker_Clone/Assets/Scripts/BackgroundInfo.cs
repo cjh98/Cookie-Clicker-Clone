@@ -10,14 +10,15 @@ public class BackgroundInfo : MonoBehaviour
 
     void Update()
     {
-        double cookies = System.Math.Round(Game.currentCookies);
+
+        double cookies = System.Math.Round(Game.thisGame.currentCookies); ;
 
         if (cookies == 1)
             cookiesText = " cookie";
         else
             cookiesText = " cookies";
 
-        numCookies.text = cookies + cookiesText;
-        cps.text = Game.totalCookiesPerSecond + " per second";
+        numCookies.text = string.Format("{0:n0}", cookies) + cookiesText;
+        cps.text = string.Format("{0:0.#}", Game.thisGame.totalCookiesPerSecond) + " per second";
     }
 }

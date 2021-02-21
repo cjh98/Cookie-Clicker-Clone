@@ -1,21 +1,45 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
-public static class Game
+public class Game : MonoBehaviour
 {
-    public static double currentCookies;
-    public static double totalCookies;
+    public static Game thisGame;
 
-    public static double timeStep = 0.02;
-    public static double totalCookiesPerSecond = 0;
-
-    public static void BakeCookies(double amount)
+    public List<Building> buildings = new List<Building>()
     {
-        currentCookies += amount * timeStep;
-        totalCookies += amount * timeStep;
+        {new Building("Cursor",  15,     0.1)},
+        {new Building("Grandma", 100,    1  )},
+        {new Building("Farm",    1100,   8  )},
+        {new Building("Mine",    12000,  47 )},
+        {new Building("Factory", 130000, 260)}
+    };
+
+    public double timeStep = 0.02;
+
+    public double currentCookies = 0;
+    public double totalCookiesPerSecond = 0;
+
+    void Awake()
+    {
+        thisGame = this;
+    }
+    public double GetCPS()
+    {
+        double cps = 0;
+        Building current;
+
+        for (int i = 0; i < buildings.Count; i++)
+        {
+            current = buildings[i];
+            cps += current.cookiesPerSecond * current.amount * current.level;
+        }
+
+        return cps;
     }
 
-    public static void UseCookies(double amount)
+    void FixedUpdate()
     {
-        currentCookies -= amount;
+        totalCookiesPerSecond = GetCPS();
+        currentCookies += totalCookiesPerSecond * timeStep;
     }
 }

@@ -83,8 +83,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8187156853067737773}
-  - component: {fileID: 8187156853067737774}
-  - component: {fileID: 8187156853067737772}
+  - component: {fileID: 382623770}
   m_Layer: 0
   m_Name: Grandma Prefab
   m_TagString: Untagged
@@ -112,23 +111,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8187156853067737774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8187156853067737775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffe4d99d5a2a3ed4f8e4e2e2cee66222, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: Grandma
-  cookiesPerSecond: 1
-  baseCost: 100
-  amount: 0
---- !u!114 &8187156853067737772
+--- !u!114 &382623770
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,9 +123,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f455e7548aad6b4ead0b913a5fd9768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  index: 1
   buildingName: {fileID: 8187156853745708435}
-  amountDisplay: {fileID: 8187156853283044641}
-  costDisplay: {fileID: 8187156853358666267}
+  price: {fileID: 8187156853358666267}
+  amount: {fileID: 8187156853283044641}
 --- !u!1 &8187156853283044643
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,7 +475,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8187156853067737772}
+      - m_Target: {fileID: 382623770}
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:

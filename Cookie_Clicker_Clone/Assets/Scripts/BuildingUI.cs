@@ -3,27 +3,28 @@ using UnityEngine.UI;
 
 public class BuildingUI : MonoBehaviour
 {
-    Building building;
+    public int index;
 
     public Text buildingName;
-    public Text amountDisplay;
-    public Text costDisplay;
+    public Text price;
+    public Text amount;
 
     void Start()
     {
-        building = GetComponent<Building>();
-        buildingName.text = building.type;
-        costDisplay.text = building.baseCost.ToString();
-        amountDisplay.text = building.amount.ToString();
+        buildingName.text = Game.thisGame.buildings[index].type;
+        price.text = string.Format("{0:n0}", Game.thisGame.buildings[index].GetPrice());
+        amount.text = Game.thisGame.buildings[index].amount.ToString();
     }
 
     public void OnClick()
     {
-        building.Purchase();
+        if (Game.thisGame.currentCookies >= Game.thisGame.buildings[index].GetPrice())
+        {
+            Game.thisGame.buildings[index].Purchase();
+        }
+        
 
-        double cost = System.Math.Round(building.CalcPrice());
-
-        amountDisplay.text = building.amount.ToString();
-        costDisplay.text = cost.ToString();
+        price.text = string.Format("{0:n0}", Game.thisGame.buildings[index].GetPrice());
+        amount.text = Game.thisGame.buildings[index].amount.ToString();
     }
 }
